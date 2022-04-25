@@ -4,30 +4,53 @@ const todolist = new Vue({
         dolist: [
             {
                 toDo: 'one hour of workout',
-                check: false,
-            },
+                check: false
+            } ,
             {
                 toDo: 'clean the bathroom',
-                check: false,
+                check: false
             },
             {
                 toDo: 'make some dubstep',
-                check: false,
+                check: false
             },
             {
                 toDo: 'having fun with vue',
-                check: false,
+                check: false
             },
             {
                 toDo: 'watch the sky',
-                check: false,
+                check: false
             },
             {
                 toDo: 'sleep on a cloud',
-                check: false,
+                check: false
             },
-        ]
+        ],
+        newDo: {
+            toDo: null,
+            check: false
+        }
+       
     },
-    methods: {}
-
+    methods: {
+        changeCheck(index){
+            this.dolist[index].check = !this.dolist[index].check
+        },
+        removeItem(index){
+            this.dolist.splice(index, 1); 
+            if (this.dolist.length === 0){
+                let pp = document.createElement('p')
+                pp.innerHTML = 'inserisci una thing !'
+                console.log(pp)
+            }
+        },
+        addItem(){
+            let tonno = {
+                toDo: this.newDo.toDo,
+                check: false
+            }
+            this.dolist.push(tonno)
+        }
+    }
 })
