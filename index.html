@@ -28,11 +28,11 @@
                             <ul class="list-group rounded-0">
                                 <li v-for="(thing, index) in dolist" :class="{ sbarred: thing.check }" class="list-group-item border-0 d-flex align-items-center ps-0">
                                     <span @click="changeCheck(index)">{{thing.toDo}} {{index}} </span>
-                                    <button class="btn btn-primary d-flex justify-content-end" @click="changeCheck(index)">fatto</button>
-                                    <i class="fa-solid fa-xmark" @click="removeItem(index)" ></i>
+                                    <button class="btn btn-primary d-flex justify-content-end" @click="changeCheck(index)"><i class="fa-solid fa-check"></i></button>
+                                    <i class="fa-regular fa-trash-can" @click="removeItem(index)"></i>
                                 </li>
                                 </ul>
-                                <input v-model="newDo.toDo" type="text" placeholder="add thing to do!!"> <button v-on:key.enter="addItem()" @click="addItem()" class="btn btn-outline-success">add</button>
+                                <input v-model="newDo.toDo" type="text" placeholder="to do!!!"> <button v-on:key.enter="addItem()" @click="addItem()" class="btn btn-outline-success">add</button>
                         </div>
                     </div>
                 </div>
